@@ -1,15 +1,26 @@
 {
-    "name": "Data Pipeline",
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "app",
+    "name": "Data Pipeline Dev Container",
+    "image": "my-dev-container",
     "workspaceFolder": "/app",
+    "remoteUser": "root",
+    "forwardPorts": [8888],
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
-                "ms-python.vscode-pylance"
-            ]
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.formatting.provider": "black",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true
+            }
         }
     },
-    "remoteUser": "root"
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "python -m pip install --upgrade pip setuptools wheel && pip install --no-cache-dir -r requirements.txt"
 }

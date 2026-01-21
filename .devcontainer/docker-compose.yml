@@ -1,10 +1,21 @@
+version: "3.9"
+
 services:
   app:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
+    container_name: de_project_app
     volumes:
-      - ..:/app
+      - ..:/app:cached
     env_file:
       - ../.env
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYSPARK_PYTHON: python3
+      JAVA_HOME: /usr/lib/jvm/default-java
+    ports:
+      - "8888:8888"  #JupyterLab / Spark UI
     command: sleep infinity
+    tty: true
+    restart: unless-stopped
