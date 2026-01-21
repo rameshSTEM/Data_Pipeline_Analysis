@@ -1,0 +1,17 @@
+# Packaging tools
+pip==26.2.1
+setuptools>=80.0.0
+wheel>=0.41.2
+
+# Kafka client
+confluent-kafka==2.13.0
+
+# HTTP / networking
+requests==2.32.3
+urllib3==2.4.0
+charset-normalizer==3.4.2
+idna==3.10
+
+# Spark
+pyspark==3.5.5
+py4j==0.10.9.7
