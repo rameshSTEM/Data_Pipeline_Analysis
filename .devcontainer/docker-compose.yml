@@ -15,7 +15,7 @@ services:
       PYSPARK_PYTHON: python3
       JAVA_HOME: /usr/lib/jvm/default-java
     ports:
-      - "8888:8888"
+      - "8889:8888"
     command: sleep infinity
     tty: true
     restart: unless-stopped

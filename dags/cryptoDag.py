@@ -31,6 +31,8 @@ DESIRED_KEYS = [
     "total_volume", "high_24h", "low_24h", "last_updated"
 ]
 
+create_topic()
+
 # Avro Schema definition and loading
 VALUE_SCHEMA = loads("""
 {
