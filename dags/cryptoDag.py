@@ -1,5 +1,6 @@
-import time
-import requests
+import time,requests
+from config import KAFKA_BROKER, SCHEMA_REGISTRY_URL, KAFKA_TOPIC
+from bootstrap_kafka import create_topic
 from confluent_kafka.avro import AvroProducer, loads
 #Exception class for Kafka-specific runtime errors.
 from confluent_kafka import KafkaException
