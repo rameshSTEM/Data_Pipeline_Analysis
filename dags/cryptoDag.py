@@ -6,8 +6,8 @@ from confluent_kafka import KafkaException
 
 
 #kafka and schema registry settings
-KAFKA_BROKER = 'localhost:9092'
-SCHEMA_REGISTRY_URL = 'http://localhost:8081'
+KAFKA_BROKER = 'kafka:9092'
+SCHEMA_REGISTRY_URL = 'http://schema-registry:8081'
 KAFKA_TOPIC = 'crypto-prices-avro'
 POLL_INTERVAL = 30  # seconds
 
