@@ -1,6 +1,7 @@
 {
-    "name": "Data Pipeline Dev Container",
-    "image": "my-dev-container",
+    "name": "Dev_Conatiner_App",
+    "image": "my-dev-container:latest",
+    "runArgs": ["--network=devcontainer_default"],
     "workspaceFolder": "/app",
     "remoteUser": "root",
     "forwardPorts": [8888],
