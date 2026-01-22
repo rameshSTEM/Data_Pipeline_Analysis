@@ -5,7 +5,7 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-    container_name: DE_project_app
+    container_name: my-dev-container
     volumes:
       - ..:/app:cached
     env_file:
