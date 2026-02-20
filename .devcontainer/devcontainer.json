@@ -1,6 +1,6 @@
 {
     "name": "Dev_Conatiner_App",
-    "image": "my-dev-container:latest",
+    "image": "devcontainer-app",
     "runArgs": ["--network=devcontainer_default"],
     "workspaceFolder": "/app",
     "remoteUser": "root",
