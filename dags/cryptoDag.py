@@ -13,7 +13,7 @@ KAFKA_TOPIC = 'crypto-prices-avro'
 POLL_INTERVAL = 30  # seconds
 
 #REST enpoint to fetch crypto data
-COINGECKO_URL = 'https://api.coingecko.com/api/v3/coins/markets'
+COINGECKO_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd'
 
 #parameters for the API request
 PARAMS = {
@@ -45,8 +45,8 @@ VALUE_SCHEMA = loads("""
     {"name": "current_price", "type": "double"},
     {"name": "market_cap", "type": "double"},
     {"name": "total_volume", "type": "double"},
-    {"name": "high_24h", "type": "double"},
-    {"name": "low_24h", "type": "double"},
+    {"name": "high_24h", "type": ["null", "double"], "default": null},
+    {"name": "low_24h", "type": ["null", "double"], "default": null},
     {"name": "last_updated", "type": "string"}
   ]
 }
