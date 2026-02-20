@@ -104,6 +104,7 @@ def stream_crypto_data():
             for record in records:
                 producer.produce(
                     topic=KAFKA_TOPIC,
+                    key = {"id": record["id"]}, #using the coin id as the message key for partitioning
                     value=record,
                     on_delivery=delivery_report
                 )
